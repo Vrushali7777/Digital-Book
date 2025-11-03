@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biology Chapters | Science DigiBook</title>
+
+    <link rel="stylesheet" href="Cc4.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <section class="header">
+        <nav>
+            <a href="../../homepage.html"><img src="../../images/logo.png" alt="Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="../../homepage.html">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">COURSE</a></li>
+                    <li><a href="#">BLOG</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <div class="chapter-main">
+            <div class="chapter-list">
+                <div class="chapter-card" onclick="openPDF('../../../PDFs/biology/C8.pdf')">
+                    <h3>Chapter PDF</h3>
+                </div>
+                <div class="chapter-card" onclick="openPDF('')">
+                    <h3>NCERT SOLUTIONS</h3>
+                </div>
+                <div class="chapter-card" onclick="openPDF('../../../PDFs/NExemplar/C8.pdf')">
+                    <h3>NCERT EXEMPLAR</h3>
+                </div>
+                <div class="chapter-card" onclick="openPDF('pdfs/chapter4.pdf')">
+                    <h3>EXEMPLAR SOLUTIONS</h3>
+                </div>
+                <div class="chapter-card" onclick="openPDF('pdfs/chapter5.pdf')">
+                    <h3>DPP</h3>
+                </div>
+                <div class="chapter-card" onclick="openPDF('pdfs/chapter5.pdf')">
+                    <h3>DPP</h3>
+                </div>
+            </div>
+
+            <div class="pdf-viewer">
+                <div class="viewer-header">
+                    <div class="viewer-tabs">
+                        <span class="tab active">HOME</span>
+                        <span class="tab">COURSE</span>
+                        <span class="tab">TRG/EXP</span>
+                    </div>
+                    <div class="viewer-controls">
+                        <i class="fa fa-search"></i>
+                        <i class="fa fa-expand"></i>
+                        <i class="fa fa-ellipsis-v"></i>
+                    </div>
+                </div>
+                <div class="viewer-content">
+                    <div class="viewer-sidebar">
+                        <i class="fa fa-file-text-o"></i>
+                        <i class="fa fa-bookmark"></i>
+                        <i class="fa fa-th-list"></i>
+                    </div>
+                    <div id="pdf-placeholder" class="viewer-placeholder">
+                        <p>Please select an option</p>
+                    </div>
+                    <iframe id="pdfFrame" src=""></iframe>
+                </div>
+                <div class="viewer-footer">
+                    <i class="fa fa-backward"></i>
+                    <i class="fa fa-play"></i>
+                    <i class="fa fa-forward"></i>
+                    <span class="page-info">1 / 10</span>
+                    <i class="fa fa-cog"></i>
+                    <i class="fa fa-share-alt"></i>
+                    <i class="fa fa-download"></i>
+                    <i class="fa fa-print"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // ✅ UPDATED openPDF FUNCTION
+        function openPDF(filePath) {
+            // 1. Hide the placeholder message
+            document.getElementById("pdf-placeholder").style.display = 'none';
+            // 2. Set the iframe source to load the PDF
+            document.getElementById("pdfFrame").src = filePath;
+            // 3. Make sure the iframe is visible
+            document.getElementById("pdfFrame").style.display = 'block';
+        }
+
+        // Existing menu functions
+        function showMenu() {
+            document.getElementById("navLinks").style.right = "0";
+        }
+
+        function hideMenu() {
+            document.getElementById("navLinks").style.right = "-200px";
+        }
+    </script>
+</body>
+
+</html>

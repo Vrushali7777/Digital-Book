@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science DigiBook</title>
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Header -->
+    <section class="header">
+        <nav>
+            <a href="homepage.html"><img src="images/logo.png" alt=""></a>
+            <li><a href="../Login/login.html" class="login-btn">LOGIN / SIGNUP</a></li>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">COURSE</a></li>
+                    <li><a href="">BLOG</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <div class="text-box">
+            <h1>Welcome to Science DigiBook</h1>
+            <p>Explore, Learn, and Experience Science like never before! Your all-in-one interactive book for
+                Class 10.
+            </p>
+            <a href="" class="hero-btn">Scroll Down to Know More</a>
+        </div>
+    </section>
+
+    <!-- Book segregation - physics, bio and chem -->
+    <section class="books">
+        <h1>Explore Your Digital Science Books</h1>
+        <p>Dive into the world of science with our interactive digital books. Learn Chemistry, Biology, and Physics through NCERT Examplers, easy explanations, — all in one place!</p>
+
+        <div class="row">
+            <div class="books-col">
+                <h3>Chemistry</h3>
+                <img src="images/chem.jpeg" alt="Chemistry" class="subject-img">
+                <a href="chemistry/chemchapters.html" class="read-btn" target="_blank">Read Now</a>
+            </div>
+            <div class="books-col">
+                <h3>Biology</h3>
+                <img src="images/bio.jpeg" alt="Biology" class="subject-img">
+                <a href="biology/biochapters.html" class="read-btn" target="_blank">Read Now</a>
+            </div>
+            <div class="books-col">
+                <h3>Physics</h3>
+                <img src="images/phy.jpeg" alt="Physics" class="subject-img">
+                <a href="physics/phychapters.html" class="read-btn" target="_blank">Read Now</a>
+
+            </div>
+        </div>
+    </section>
+    <!--  -->
+</body>
+<script src="homepage.js"></script>
+
+</html>

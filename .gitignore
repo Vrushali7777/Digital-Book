@@ -1,0 +1,17 @@
+.DS_Store
+Thumbs.db
+
+.vscode/
+
+.env
+config.php
+*.env.php
+
+*.log
+cache/
+tmp/
+
+node_modules/
+__pycache__/
+
+database.sql
