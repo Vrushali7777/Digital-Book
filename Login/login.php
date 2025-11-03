@@ -15,7 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $user = $result->fetch_assoc();
         if (password_verify($password, $user['password'])) {
             $_SESSION['username'] = $user['username'];
-            header("Location: ../Homepage/homepage.html");
+            
+            // ✅ Homepage is now in root folder
+            header("Location: ../homepage.html");
             exit();
         } else {
             echo "<script>alert('Incorrect password!'); window.location='index.html';</script>";
