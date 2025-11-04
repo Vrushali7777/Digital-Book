@@ -162,6 +162,18 @@ p{
     box-sizing: border-box;
 }
 
+.chapter-heading {
+  white-space: nowrap;       /* keep text on same line */
+}
+
+.sub-text {
+  font-weight: normal;
+  color: #9e9e9e;            /* light grey */
+  font-size: 0.9em;          /* smaller text */
+  margin-left: 4px;          /* small spacing */
+}
+
+
 h3{
     text-align: center;
     font-weight: 600;
