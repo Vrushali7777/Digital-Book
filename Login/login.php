@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $user['username'];
             
             // ✅ Homepage is now in root folder
-            header("Location: ../homepage.html");
+            header("Location: ../index.html");
             exit();
         } else {
             echo "<script>alert('Incorrect password!'); window.location='index.html';</script>";

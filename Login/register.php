@@ -13,14 +13,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $check->get_result();
 
     if ($result && $result->num_rows > 0) {
-        echo "<script>alert('Email already registered!'); window.location='index.html';</script>";
+        echo "<script>alert('Email already registered!'); window.location='login.html';</script>";
     } else {
         $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
         $stmt->bind_param("sss", $username, $email, $password);
         if ($stmt->execute()) {
-            echo "<script>alert('Registration successful! Please login now.'); window.location='index.html';</script>";
+            echo "<script>alert('Registration successful! Please login now.'); window.location='login.html';</script>";
         } else {
-            echo "<script>alert('Error during registration!'); window.location='index.html';</script>";
+            echo "<script>alert('Error during registration!'); window.location='login.html';</script>";
         }
         $stmt->close();
     }
