@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Reports | Science DigiBook</title>
+
+<link rel="stylesheet" href="submittedquizreport.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+<script src="submittedquizreport.js" defer></script>
+
+</head>
+
+<body>
+
+<section class="header">
+
+<nav>
+<a href="#"><img src="../../../images/logo.png" alt="Logo"></a>
+
+<div class="nav-links" id="navLinks">
+    <i class="fa fa-times" onclick="hideMenu()"></i>
+    <ul>
+        <li><a href="../../../../index.html">HOME</a></li>
+        <li><a href="#">COURSE</a></li>
+        <li><a href="#">BLOG</a></li>
+        <li><a href="#">CONTACT</a></li>
+    </ul>
+</div>
+
+<i class="fa fa-bars" onclick="showMenu()"></i>
+</nav>
+
+<div class="chapter-main">
+
+<!-- Left report menu -->
+<div class="chapter-list">
+
+    <div class="chapter-card" id="latestReportBtn">
+        <h3>Quiz 1 report</h3>
+    </div>
+
+    <div class="chapter-card">
+        <h3>Quiz 2 report</h3>
+    </div>
+
+    <div class="chapter-card">
+        <h3>Quiz 3 report</h3>
+    </div>
+
+    <div class="chapter-card">
+        <h3>Quiz 4 report</h3>
+    </div>
+
+    <div id="reportList" class="list-scroll"></div>
+
+</div>
+
+<!-- PDF Viewer same as chapters -->
+<div class="pdf-viewer">
+
+    <div class="viewer-header">
+        <div class="viewer-tabs">
+            <span class="tab active">REPORTS</span>
+        </div>
+        <div class="viewer-controls">
+            <i class="fa fa-search"></i>
+            <i class="fa fa-expand"></i>
+        </div>
+    </div>
+
+    <div class="viewer-content">
+
+        <div class="viewer-sidebar">
+            <i class="fa fa-file-text-o"></i>
+        </div>
+
+        <!-- Table before saving PDF -->
+        <div id="reportContent" class="viewer-placeholder">
+            <h2>Quiz Submission Report</h2>
+            <p id="scoreLine"></p>
+
+            <table id="answerTable">
+                <tr>
+                    <th>Question</th>
+                    <th>Your Answer</th>
+                    <th>Correct Answer</th>
+                </tr>
+            </table>
+
+            <button id="savePdfBtn" class="primary">Save PDF to Reports</button>
+        </div>
+
+        <!-- PDF View -->
+        <iframe id="pdfFrame"></iframe>
+
+    </div>
+
+</div>
+
+</div>
+</section>
+
+<script>
+function showMenu(){ document.getElementById("navLinks").style.right="0"; }
+function hideMenu(){ document.getElementById("navLinks").style.right="-200px"; }
+
+function openPDF(url){
+    document.getElementById("reportContent").style.display="none";
+    const frame = document.getElementById("pdfFrame");
+    frame.style.display="block";
+    frame.src = url;
+}
+</script>
+
+</body>
+</html>
