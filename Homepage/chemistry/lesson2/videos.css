@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+/* -------- HEADER -------- */
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)),url(../../images/biobanner.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img{
+    width: 200px;
+}
+
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+}
+
+.nav-links ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav-links ul li::after{
+    content: ' ';
+    width: 0%;
+    height: 2px;
+    background: #EE9727;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+
+nav .fa{
+    display: none;
+}
+
+/* -------- CHAPTER SECTION -------- */
+.chapter-section {
+    text-align: center;
+    padding-top: 120px;
+    padding-bottom: 150px;
+    color: #fff;
+}
+
+.chapter-link {
+    color: #EE9727;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+.chapter-link:hover {
+    text-decoration: underline;
+}
+
+/* Tabs */
+.tabs-container {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.tab {
+    width: 100%;
+    padding: 18px 22px;
+    border: 2px solid rgba(255,255,255,0.75);
+    background: rgba(255,255,255,0.15);
+    border-radius: 14px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(6px);
+    position: relative;
+}
+
+/* left side text + button */
+.tab-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.tab-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* inside button */
+.inside-btn {
+    padding: 7px 16px;
+    background-color: #EE9727;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 13px;
+    border: 2px solid #EE9727;
+    transition: 0.3s ease;
+}
+.inside-btn:hover {
+    background: transparent;
+    color: #EE9727;
+}
+
+/* complete circle */
+.status-circle {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #EE9727;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .3s;
+}
+.status-circle.completed {
+    background-color: #20c354;
+    border-color: #20c354;
+}

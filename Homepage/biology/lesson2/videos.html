@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Science DigiBook</title>
+    <link rel="stylesheet" href="videos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <section class="header">
+        <nav>
+            <a href=""><img src="../../images/logo.png" alt=""></a>
+
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="../../../../index.html">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">COURSE</a></li>
+                    <li><a href="">BLOG</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+        <!-- Chapter Section -->
+        <section class="chapter-section" id="chapter5">
+
+            <h2>Chapter 5</h2>
+            <a href="#" class="chapter-link" target="_blank">Open Chapter 5 PDF</a>
+
+            <div class="tabs-container">
+
+                <div class="tab">
+                    <div class="tab-left">
+                        <span class="tab-title">Chapter PDF</span>
+                        <a class="inside-btn" href="https://www.youtube.com/watch?v=RRQh1BC2ZgI" target="_blank">🎬 Watch Video</a>
+                    </div>
+                    <div class="status-circle"></div>
+                </div>
+
+                <div class="tab">
+                    <div class="tab-left">
+                        <span class="tab-title">NCERT SOLUTIONS</span>
+                        <a class="inside-btn" href="#" target="_blank">🎬 Watch Video</a>
+                    </div>
+                    <div class="status-circle"></div>
+                </div>
+
+                <div class="tab">
+                    <div class="tab-left">
+                        <span class="tab-title">EXEMPLAR SOLUTIONS</span>
+                        <a class="inside-btn" href="#" target="_blank">🎬 Watch Video</a>
+                    </div>
+                    <div class="status-circle"></div>
+                </div>
+
+                <div class="tab">
+                    <div class="tab-left">
+                        <span class="tab-title">DPP</span>
+                        <a class="inside-btn" href="#" target="_blank">🎬 Watch Video</a>
+                    </div>
+                    <div class="status-circle"></div>
+                </div>
+
+            </div>
+        </section>
+    </section>
+
+    <!-- Scripts -->
+    <script>
+        document.querySelectorAll(".status-circle").forEach(circle => {
+            circle.addEventListener("click", () => {
+                circle.classList.toggle("completed");
+            });
+        });
+
+        function showMenu() {
+            document.getElementById("navLinks").style.right = "0";
+        }
+        function hideMenu() {
+            document.getElementById("navLinks").style.right = "-200px";
+        }
+    </script>
+
+</body>
+</html>
