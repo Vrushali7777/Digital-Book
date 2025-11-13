@@ -1,0 +1,38 @@
+<?php
+header("Content-Type: application/json");
+
+// Read base64 PDF from POST
+$data = json_decode(file_get_contents("php://input"), true);
+if (!isset($data["file"])) {
+    echo json_encode(["status" => "error", "message" => "No file data received"]);
+    exit;
+}
+
+$pdfBase64 = $data["file"];
+
+// Directory where reports are stored
+$reportsDir = "../reports/quiz";
+
+// Create directory if not exists
+if (!file_exists($reportsDir)) {
+    mkdir($reportsDir, 0777, true);
+}
+
+// Get all existing quiz report filenames quiz_1_report.pdf, quiz_2_report.pdf...
+$files = glob("$reportsDir/quiz_*_report.pdf");
+
+// Calculate next quiz number
+$nextNum = count($files) + 1;
+
+// Create sequential filename
+$filename = "quiz_" . $nextNum . "_report.pdf";
+
+// Decode and save file
+file_put_contents("$reportsDir/$filename", base64_decode($pdfBase64));
+
+// Send filename back to frontend
+echo json_encode([
+    "status" => "success",
+    "file" => $filename
+]);
+?>

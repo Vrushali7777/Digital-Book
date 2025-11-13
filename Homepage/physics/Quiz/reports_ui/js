@@ -1,0 +1,78 @@
+const BASE_URL    = "/DIGITAL_BOOK/Homepage/physics/Quiz";
+const API_URL     = `${BASE_URL}/api`;
+const REPORTS_URL = `${BASE_URL}/reports/quiz`;
+
+let reportFiles = [];
+let currentIndex = 0;
+
+// ✅ load reports from server AND map to Quiz # saved locally
+async function loadReports() {
+  const res = await fetch(`${API_URL}/listreports.php`);
+  reportFiles = await res.json();
+
+  // ✅ Maintain permanent quiz order using localStorage index
+  let storedOrder = JSON.parse(localStorage.getItem("quizFileOrder")) || [];
+
+  reportFiles.forEach(file => {
+    if (!storedOrder.includes(file)) storedOrder.push(file);
+  });
+
+  // Save permanent order
+  localStorage.setItem("quizFileOrder", JSON.stringify(storedOrder));
+
+  renderSidebar(storedOrder);
+  
+  // Auto open latest
+  if (storedOrder.length > 0) {
+    loadPDF(storedOrder.length - 1);
+  }
+}
+
+// ✅ Sidebar display: Quiz Report 1 = first saved, etc
+function renderSidebar(files) {
+  const panel = document.getElementById("fixedQuizButtons");
+  panel.innerHTML = "";
+
+  if(files.length === 0) {
+    panel.innerHTML = `<p style="color:white;">No reports yet</p>`;
+    return;
+  }
+
+  files.forEach((file, i) => {
+    const div = document.createElement("div");
+    div.className = "chapter-card";
+    div.innerHTML = `<h3 style="color:white;">Quiz Report ${i+1}</h3>`;
+    div.onclick = () => loadPDF(i);
+    panel.appendChild(div);
+  });
+}
+
+// ✅ Show PDF in viewer
+function loadPDF(index) {
+  const files = JSON.parse(localStorage.getItem("quizFileOrder")) || [];
+  if (index < 0 || index >= files.length) return;
+
+  currentIndex = index;
+  document.getElementById("pdfFrame").src = `${REPORTS_URL}/${files[index]}`;
+}
+
+// ✅ Slider Buttons
+document.getElementById("prevPDF").onclick = () => {
+  const files = JSON.parse(localStorage.getItem("quizFileOrder")) || [];
+  if (currentIndex > 0) loadPDF(currentIndex - 1);
+};
+
+document.getElementById("nextPDF").onclick = () => {
+  const files = JSON.parse(localStorage.getItem("quizFileOrder")) || [];
+  if (currentIndex < files.length - 1) loadPDF(currentIndex + 1);
+};
+
+// ✅ Download PDF button
+document.getElementById("downloadPDF").onclick = () => {
+  const files = JSON.parse(localStorage.getItem("quizFileOrder")) || [];
+  if (!files.length) return alert("No report available");
+  window.open(`${REPORTS_URL}/${files[currentIndex]}`, "_blank");
+};
+
+// ✅ Start
+window.addEventListener("DOMContentLoaded", loadReports);

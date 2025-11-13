@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz Reports | Science DigiBook</title>
+
+<link rel="stylesheet" href="submittedquizreport.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
+<script src="submittedquizreport.js" defer></script>
+</head>
+
+<body>
+
+<section class="header">
+
+<nav>
+<a href="#"><img src="../../../images/logo.png" alt="Logo"></a>
+
+<div class="nav-links" id="navLinks">
+    <i class="fa fa-times" onclick="hideMenu()"></i>
+    <ul>
+        <li><a href="../../../../index.html">HOME</a></li>
+        <li><a href="#">COURSE</a></li>
+        <li><a href="#">BLOG</a></li>
+        <li><a href="#">CONTACT</a></li>
+    </ul>
+</div>
+
+<i class="fa fa-bars" onclick="showMenu()"></i>
+</nav>
+
+<div class="chapter-main">
+
+<!-- ✅ dynamic quiz report buttons -->
+<div class="chapter-list" id="fixedQuizButtons"></div>
+
+<!-- ✅ PDF Viewer -->
+<div class="pdf-viewer">
+
+    <div class="viewer-header">
+        <div class="viewer-tabs">
+            <span class="tab active">REPORTS</span>
+        </div>
+        <div class="viewer-controls">
+            <button id="prevPDF" class="viewer-btn">&#8592;</button>
+            <button id="nextPDF" class="viewer-btn">&#8594;</button>
+            <button id="downloadPDF" class="viewer-btn">Download</button>
+        </div>
+    </div>
+
+    <div class="viewer-content">
+        <iframe id="pdfFrame"></iframe>
+    </div>
+
+</div>
+
+</div>
+</section>
+
+<script>
+function showMenu(){ document.getElementById("navLinks").style.right="0"; }
+function hideMenu(){ document.getElementById("navLinks").style.right="-200px"; }
+</script>
+
+</body>
+</html>

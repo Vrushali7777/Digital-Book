@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, .7), rgba(4, 9, 30, .7)), url(../../images/phybanner.png);
+  background-size: cover;
+  background-position: center;
+  padding-top: 20px;
+}
+
+/* NAVBAR */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+}
+
+nav img {
+  width: 150px;
+}
+
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+}
+
+.nav-links ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-links ul li a:hover {
+  color: #EE9727;
+}
+
+nav .fa {
+  display: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* SCORE CARD */
+.score-container {
+  width: 80%;
+  margin: 120px auto 40px auto;
+  background: rgba(255, 255, 255, .12);
+  padding: 25px;
+  border-radius: 10px;
+  backdrop-filter: blur(4px);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,.6);
+}
+
+h2 {
+  text-align: center;
+  color: #EE9727;
+  margin-bottom: 20px;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,.3);
+}
+
+th {
+  background: rgba(0,0,0,.4);
+}
+
+/* BUTTON */
+.btn-report {
+  background: #EE9727;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-report:hover {
+  background: #d9841f;
+}
+
+/* MOBILE NAV */
+@media (max-width:800px) {
+  nav .fa {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    right: -200px;
+    background: #EE9727;
+    top: 0;
+    width: 200px;
+    height: 100vh;
+    padding-top: 60px;
+    transition: .4s;
+  }
+
+  .nav-links ul li {
+    display: block;
+  }
+}
